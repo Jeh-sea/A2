@@ -28,7 +28,24 @@ function addR() {
 
 // Add a column
 function addC() {
-    alert("Clicked Add Col"); // Replace this line with your code.
+    row_num = grid.rows.length;
+
+    if (row_num == 0) {
+        let row = grid.insertRow();
+        let cell = row.insertCell();
+        cell.onclick = function() {
+            this.style.backgroundColor= '${selected_color}';
+        };
+    }
+    else {
+        let rows = grid.rows;
+        for(let i=0; i < rows.length; i++){
+            let cell = rows[i].insertCell();
+            cell.onclick=function() {
+                this.style.backgroundColor = '${selected_color}';
+            };
+        }
+    }
 }
 
 // Remove a row
