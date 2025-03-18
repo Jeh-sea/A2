@@ -58,7 +58,21 @@ function removeR() {
 
 // Remove a column
 function removeC() {
-    alert("Clicked Remove Col"); // Replace this line with your code.
+    row_num = grid.rows.length;
+    if (row_num != 0) {
+        let rows = grid.rows;
+        for (let i = 0; i < rows.length; i++) {
+            let last_cell = rows[i].children.length - 1;
+            rows[i].deleteCell(last_cell);
+        }
+        col_num = rows[0].children.length;
+        if (col_num == 0) {
+            row_num = grid.rows.length;
+            for (let i = row_num - 1; i >= 0; i--) {
+                grid.deleteRow(i);
+            }
+        }
+    }
 }
 
 // Set global variable for selected color
