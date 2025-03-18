@@ -50,7 +50,10 @@ function addC() {
 
 // Remove a row
 function removeR() {
-    alert("Clicked Remove Row"); // Replace this line with your code.
+    row_num = grid.rows.length;
+    if (row_num != 0) {
+        grid.deleteRow(row_num - 1);
+    }
 }
 
 // Remove a column
