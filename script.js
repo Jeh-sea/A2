@@ -11,7 +11,7 @@ function addR() {
         let row = grid.insertRow();
         let cell= row.insertCell();
         cell.onclick = function() {
-            this.style.backgroundColor = '${selected_color}';
+            this.style.backgroundColor = colorSelected;
         };
     }
     else {
@@ -20,7 +20,7 @@ function addR() {
         for (let i =0; i < col_num; i++) {
             let cell = row.insertCell();
             cell.onclick= function() {
-                this.style.backgroundColor = '${selected_color}';
+                this.style.backgroundColor = colorSelected;
             };
         }
     }
@@ -34,7 +34,7 @@ function addC() {
         let row = grid.insertRow();
         let cell = row.insertCell();
         cell.onclick = function() {
-            this.style.backgroundColor= '${selected_color}';
+            this.style.backgroundColor= colorSelected;
         };
     }
     else {
@@ -42,7 +42,7 @@ function addC() {
         for(let i=0; i < rows.length; i++){
             let cell = rows[i].insertCell();
             cell.onclick=function() {
-                this.style.backgroundColor = '${selected_color}';
+                this.style.backgroundColor = colorSelected;
             };
         }
     }
